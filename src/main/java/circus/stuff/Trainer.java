@@ -1,3 +1,10 @@
+package circus.stuff;
+
+import circus.animal.Animal;
+import circus.animal.Bird;
+import circus.animal.Duck;
+import circus.animal.Parrot;
+
 public class Trainer {
     public static void main(String[] args) {
         Duck d = new Duck();
@@ -13,8 +20,8 @@ public class Trainer {
         getToSpeak(d2);
         train(new Duck());
         train(new Parrot()); // cant work, cannot cast an unrelated type
-//        Animal a2 = new Animal();
-//        Bird b2 = new Bird();
+//        circus.animal.Animal a2 = new circus.animal.Animal();
+//        circus.animal.Bird b2 = new circus.animal.Bird();
     }
 
     private static void getToSpeak(Animal animal) {
