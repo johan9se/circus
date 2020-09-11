@@ -5,11 +5,17 @@ import circus.animal.Duck;
 import circus.animal.Parrot;
 import circus.stuff.Cannon;
 import circus.stuff.Equipment;
+import circus.stuff.Ladder;
+
+import java.util.ArrayList;
+import java.util.Arrays;
 
 public class Circus {
+    public static ArrayList<Duck> animalArrayList = new ArrayList<>();
+
     private static Animal[] animals = {
-            new Duck(),
-            new Parrot()
+            new Duck("Drake"),
+            new Parrot("Polly")
     };
     private static Equipment[] equipments = {
             new Ladder(50),
@@ -29,14 +35,11 @@ public class Circus {
         for (Asset a : assets) {
             if (a.getValue() <= 5) {
                 System.out.println("Ignoring low value item: " + a.getValue());
-            } else {
-                total += a.getValue();
-                System.out.println("Adding item value: " + a.getValue());
-                // some 
-                // more
-                // code 
-                // here ...
+                continue;
             }
+
+            total += a.getValue();
+            System.out.println("Adding item value: " + a.getValue());
         }
         return total;
     }
@@ -45,5 +48,19 @@ public class Circus {
         makeAnimalsTalk();
         System.out.println("Total value of equipments " + calculateValue(equipments));
         System.out.println("Total value of animals " + calculateValue(animals));
+
+        System.out.println(animals.length);
+        //animals[2] = new Duck("Louie");
+        //System.out.println(animals.length);
+
+        ArrayList<Animal> animalArrayList = new ArrayList<>(Arrays.asList(animals));
+
+        animalArrayList.add(new Duck("Goose"));
+        animalArrayList.add(new Parrot("Dolly"));
+
+        for (Animal a : animalArrayList) {
+            System.out.println(a);
+        }
+        System.out.println("Number of animals: " + animalArrayList.size());
     }
 }

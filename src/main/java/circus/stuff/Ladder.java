@@ -1,6 +1,4 @@
-package circus;
-
-import circus.stuff.Equipment;
+package circus.stuff;
 
 public class Ladder extends Equipment {
 
